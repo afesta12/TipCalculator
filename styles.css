@@ -1,0 +1,139 @@
+* {
+
+    box-sizing: border-box;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Space Mono', 'Arial';
+    font-weight: 700;
+
+}
+
+/* Typography */
+
+.attribution, a {
+
+    font-size: .75em;
+
+}
+label {
+
+    font-size: .5em;
+    color: hsl(184, 14%, 56%);
+
+}
+
+h1 {
+
+    font-size: 1.25em;
+    color: hsl(172, 67%, 45%);
+
+}
+
+h3 {
+
+    font-size: .5em;
+    color: white;
+
+}
+
+p {
+
+    color: hsl(184, 14%, 56%);
+    font-size: .4em;
+
+}
+
+/* Layout */
+body {
+
+    background-color: hsl(185, 41%, 84%);
+    display: flex;
+    flex-direction: column;
+
+}
+
+header {
+
+    margin: 40px auto;
+    margin-bottom: 10px;
+
+}
+
+input {
+
+    border-radius: 5px;
+    text-align: right;
+    padding-right: 10px;
+    width: 100%;
+}
+
+main {
+
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: .75em;
+    max-width: 375px;
+
+}
+
+.tip-percent {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+
+}
+
+.result-section {
+
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 10px;
+    padding: 1em;
+
+}
+
+.container {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+/* Buttons */
+.reset {
+
+    width: 100%;
+    background-color: hsl(172, 67%, 45%);
+    border-radius: 5px;
+    border: none;
+    padding: .25em 0 .25em 0;
+
+}
+
+.tip-btn {
+
+    background-color: hsl(183, 100%, 15%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: .25em;
+
+}
+
+.tip-btn:nth-of-type(even) {
+
+    margin-right: 0;
+
+}
+
+/* SVG */
+
+.icon {
+
+    position: absolute;
+    padding-top: 12px;
+    padding-left: 10px;
+}
