@@ -94,7 +94,7 @@ main {
     border-radius: 10px;
     padding: .75em;
     max-width: 375px;
-
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
 .tip-percent {
@@ -130,6 +130,7 @@ main {
     border: none;
     padding: .25em 0 .25em 0;
     color: hsl(183, 100%, 15%);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
 
@@ -140,6 +141,7 @@ main {
     border: none;
     border-radius: 5px;
     margin: .25em;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
 }
 
@@ -151,6 +153,14 @@ main {
     background-color: hsl(185, 41%, 84%);
     color: hsl(183, 100%, 15%);
 
+}
+
+.tip-btn:active,
+.reset:active {
+
+    transform: scale(0.98);
+    box-shadow: none;
+    
 }
 
 .tip-btn:nth-of-type(even) {
