@@ -106,6 +106,14 @@ main {
 
 }
 
+.error {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 .result-section {
 
     background-color: hsl(183, 100%, 15%);
@@ -118,6 +126,7 @@ main {
 
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
 }
 
