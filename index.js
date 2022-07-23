@@ -17,18 +17,42 @@ let defaultButton = document.querySelector('.default');
 let tipTotal = document.getElementById('tip-total');
 let tipAmount = document.getElementById('tip-amount');
 
+// Bill total event handling
 
+
+billTotal.addEventListener("click", () => {
+    peopleTotal.value = '';
+    customTip.value = '';
+    billTotal.style.border = '';
+    return;
+
+});
+
+    
+
+// People total event handling
+peopleTotal.addEventListener("click", () => {
+
+    peopleTotal.style.border = '';
+    customTip.value = '';
+    return;
+
+});
+
+    
 // Catch number of people or bill total === 0
-function isError(value, element) {
+function isError(value, inputElement, errorElement) {
 
     if(Number(value) <= 0) {
 
-        element.textContent = "Number > 0";
+        errorElement.textContent = "Number > 0";
+        inputElement.style.border = "2px solid red";
         return false;
 
     }
 
-    element.textContent = "";
+    errorElement.textContent = "";
+    inputElement.style.border = "2px solid transparent";
     return true;
 };
 
@@ -44,14 +68,36 @@ button.forEach((tipPercentage) => {
         tipPercentage.classList.add('current');
         current = tipPercentage;
 
-        if(isError(billTotal.value, billError) && isError(peopleTotal.value, peopleError)) {
+        customTip.value = '';
+
+        if(isError(billTotal.value, billTotal, billError) && isError(peopleTotal.value, peopleTotal, peopleError)) {
 
             getResult(percent);
 
+            return;
         }
 
+        return;
     });
 
+});
+
+
+customTip.addEventListener("input", () => {
+
+    let cTip = Number(customTip.value) / 100;
+
+    current.classList.remove("current");
+    current = customTip;
+
+    if(isError(billTotal.value, billTotal, billError) && isError(peopleTotal.value, peopleTotal, peopleError)) {
+
+        getResult(cTip);
+        return;
+
+    }
+
+    return;
 });
 
 function getResult(percentage) {
@@ -60,12 +106,16 @@ function getResult(percentage) {
     let people = Number(peopleTotal.value);
     
 
-    let tip = ((bill * percentage) / people).toFixed(2);
+    if(bill > 0 && people > 0) {
 
-    let totalAmount = ((bill / people) + Number(tip)).toFixed(2);
-    
-    tipAmount.textContent = `$${tip}`;
-    tipTotal.textContent = `$${totalAmount}`;
+        let tip = ((bill * percentage) / people).toFixed(2);
+
+        let totalAmount = ((bill / people) + Number(tip)).toFixed(2);
+        
+        tipAmount.textContent = `$${tip}`;
+        tipTotal.textContent = `$${totalAmount}`;
+
+    }
 
 
     return;
@@ -82,8 +132,11 @@ resetButton.addEventListener('click', () => {
     billTotal.value = '';
     peopleTotal.value = '';
 
+    billTotal.style.border = '';
+    peopleTotal.style.border = '';
+
     current.classList.remove('current');
     defaultButton.classList.add('current');
     current = defaultButton;
 
-})
+});

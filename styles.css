@@ -71,6 +71,8 @@ input {
     width: 100%;
     margin-bottom: 15px;
     transition: .15s;
+    outline-style: none;
+    outline-color: hsl(172, 67%, 45%);
 
 }
 
@@ -85,6 +87,8 @@ input:hover {
 
     border: 2px solid hsl(172, 67%, 45%);
     cursor: pointer;
+    outline-style: auto;
+    transition: .2s;
 
 }
 
